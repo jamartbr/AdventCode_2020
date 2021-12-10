@@ -69,9 +69,11 @@ bool buscar (string pas, string code) {
                         }
                     } else if (code == "ecl") {
                         string color;
-                        color+=pas.at(i+4);
-                        color+=pas.at(i+5);
-                        color+=pas.at(i+6);
+                        int pos = i+4;
+                        while (isalpha(pas.at(pos))) {
+                            color+=pas.at(pos);
+                            pos++;
+                        }
                         if (color!="amb" && color!="blu" && color!="brn" && color!="gry" && color!="grn" && color!="hzl" && color!="oth")
                             valido = false;
                     } else if (code == "pid") {
